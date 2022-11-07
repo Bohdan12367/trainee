@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Weather" icon-name="standard">
+            <div class="slds-p-left_medium">
+                <lightning-input type="text" label='Weather city' placeholder='Enter city...' onchange={handleChange} value={searchHandle}></lightning-input>
+                <lightning-button label='Search' onclick={getCity}></lightning-button>
+            </div>
+            <template if:true={weather}>
+                <div class='slds-grid slds-wrap height'>
+                    <div class = 'size'>
+                    <lightning-layout-item flexibility="auto" padding="around-small">
+                        <lightning-formatted-rich-text value={weather.Image__c}></lightning-formatted-rich-text>
+                    </lightning-layout-item>
+                    </div>
+                    <lightning-layout-item class='slds-absolute-center' padding="around-small">
+                        <p class = 'sizeCity'>{weather.City__c}</p><br>
+                        <b>{weather.Temperature__c}°C</b><br>
+                        {weather.Date__c}<br>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small">
+                        <p>Humidity: </p>
+                        {weather.Humidity__c}%<br>
+                        <p>Wind: </p>
+                        {weather.Wind__c}m/s<br>
+                        <p>Pressure: </p>
+                        {weather.Pressure__c}mb<br>
+                    </lightning-layout-item>
+                </div>
+                <lightning-button class = 'slds-button button' icon-name="utility:refresh" onclick={getCity}></lightning-button>
+            </template>
+    </lightning-card>
+</template>
