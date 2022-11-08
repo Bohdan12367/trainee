@@ -23,6 +23,7 @@ export default class InputCity extends LightningElement {
                 ));
         this.weather = null;
     }
+    
     handleChange(event) {
         this.searchKey = event.target.value;
     }

@@ -1,6 +1,6 @@
 public with sharing class WeatherRest {
 
-    @AuraEnabled(Cacheable=false)
+    @AuraEnabled(Cacheable = false)
     public static Weather__c weatherReturn(String city) {
         String temperature, name, pressure, humidity, speed;
         String endPoint = 'https://api.openweathermap.org/data/2.5/weather?appid=' + Constants.APIKey + '&q=' + city;

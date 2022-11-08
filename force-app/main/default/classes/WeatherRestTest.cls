@@ -3,8 +3,8 @@ public class WeatherRestTest {
     @IsTest
     static void TestUpdate() {
         Test.setMock(HttpCalloutMock.class, new WeatherRestMock());
-        Weather__c w = new Weather__c(City__c = 'Lviv', Pressure__c = '1010');
-        insert w;
+        Weather__c weath = new Weather__c(City__c = 'Lviv', Pressure__c = '1010');
+        insert weath;
 
         Test.startTest();
         Weather__c weather = WeatherRest.weatherReturn('Lviv');
