@@ -30,3 +30,4 @@ public with sharing class WeatherRest {
         return existingWeather;
     }
 }
+ 

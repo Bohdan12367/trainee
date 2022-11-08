@@ -11,6 +11,7 @@ public class WeatherRestTest {
         Test.stopTest();
         System.assertEquals('1019', weather.Pressure__c);
     }
+    
     @IsTest
     static void TestCreate() {
         Test.setMock(HttpCalloutMock.class, new WeatherRestMock());
