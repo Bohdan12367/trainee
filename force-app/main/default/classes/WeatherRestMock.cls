@@ -1,6 +1,5 @@
 @isTest
 global class WeatherRestMock implements HttpCalloutMock{
-    // implement http mock callout
     global HttpResponse respond(HttpRequest request){
         HttpResponse response = new HttpResponse();
         response.setHeader('Content-Type', 'application/json');
