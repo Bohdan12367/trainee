@@ -14,7 +14,6 @@ public class WeatherRestTest {
     @IsTest
     static void TestCreate() {
         Test.setMock(HttpCalloutMock.class, new WeatherRestMock());
-
         Test.startTest();
         Weather__c weather = WeatherRest.weatherReturn('Lviv');
         Test.stopTest();
